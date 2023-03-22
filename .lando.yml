@@ -3,3 +3,14 @@ recipe: drupal9
 config:
   webroot: /web
   php: 8.1
+
+tooling:
+  install:
+    service: appserver
+    dir: /app
+    cmd: |
+      /app/vendor/bin/drush si --account-pass="admin" -y &&
+      /app/vendor/bin/drush cr &&
+      /app/vendor/bin/drush config:set -y system.site uuid f38f7cf3-0452-45a9-bea6-b75454a96c5d &&
+      /app/vendor/bin/drush entity:delete shortcut_set
+      /app/vendor/bin/drush cim -y

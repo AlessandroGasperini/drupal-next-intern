@@ -1,11 +1,10 @@
-uuid: 6e17f5a6-d46a-4588-9171-4a1bfe955253
+uuid: 7805543c-282a-45e3-8c79-0c76fd41a272
 langcode: en
 status: true
 dependencies:
   config:
     - filter.format.restricted_html
   module:
-    - comment
     - contact
     - filter
     - search
@@ -17,7 +16,6 @@ label: 'Anonymous user'
 weight: 0
 is_admin: false
 permissions:
-  - 'access comments'
   - 'access content'
   - 'access site-wide contact form'
   - 'search content'
